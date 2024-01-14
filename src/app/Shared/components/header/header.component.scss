@@ -1,0 +1,48 @@
+.enlaces span {
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.enlaces_nombre {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.imagen_app {
+    text-align: center;
+    align-items: center;
+}
+
+.nombre_app {
+    margin-right: 6%;
+}
+
+.enlaces_espacio {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.lista {
+    display: inline;
+}
+
+@media(max-width:830px) {
+
+    .enlaces_espacio {
+        float: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 3%;
+        text-align: center;
+    }
+
+    .enlaces_nombre {
+        display: inline-table;
+    }
+
+    .lista {
+        float: none;
+        display: block;
+    }
+}

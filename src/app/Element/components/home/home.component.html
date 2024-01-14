@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<div class="imagen_principal">
+    <div class="nombre_principal animate__animated animate__backInDown">
+        <div>
+            <h1 class="pagina_principal">Lugar de colecciones</h1>
+            <img class="imagen_inicial rounded-circle shadow-4-strong" src="../../../../assets/logo_inicial.png"
+                alt="logo inicial">
+        </div>
+        <div>
+            <p>Bienvenidos/as a Lugar de colecciones, donde podrás administrar todas tus colecciones.</p>
+            <p>Coleccionar figuras, cromos, monedas, etc para algunas personas es más que algo con lo que pasar el
+                tiempo
+                libre y tienen numerosos objetos que ordenar en sus entanterías y habitaciones, para ello es complicado
+                llevar un contro de las colecciones y los elementos que les falta.</p>
+            <p>En lugar de colecciones podrás seleccionar los elementos de cada una de las colecciones que estés
+                realizando
+                y además dejar
+                comentarios con tu opinión que le puede servir de ayuda a otros usuarios que estén interesados.</p>
+            <p>No pares de coleccionar lo que te guste y disfruta de todas las colecciones.</p>
+        </div>
+    </div>
+</div>
+<div class="elementos_principal" *ngIf="!showAdminSection">
+    <h2>Elementos añadidos en sus colecciones</h2>
+</div>
+<app-card [elements]="elements" *ngIf="!showAdminSection"></app-card>

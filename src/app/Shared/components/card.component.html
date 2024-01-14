@@ -1,0 +1,9 @@
+<div class="card_list container rounded mt-5 bg-white p-md-5">
+    <mat-card *ngFor="let element of elements" class="home_card">
+        <mat-card-content>
+            <p><img src="{{element.imagen}}" alt="imagen elemento"></p>
+            <mat-card-title>{{ element.nombre }}</mat-card-title>
+            <p>Publication date: {{ element.fecha_publicacion | formatDate: 3 }}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

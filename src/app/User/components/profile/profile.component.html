@@ -1,0 +1,89 @@
+<div>
+    <div id="form_background">
+        <div style="margin-left: auto; margin-right: auto">
+            <p id="profileFeedback"></p>
+        </div>
+        <mat-sidenav-container id="form">
+
+
+            <div class="col-md-6 offset-md-3">
+                <div id="login" class="content mat-elevation-z8 justify-content-center">
+                    <div class="login-form">
+                        <img class="avatar mat-elevation-z8 mt-5" src="./assets/logo_inicial.png" alt="logo inicial">
+                        <div class="mt-2">
+
+                            <h1 class="titulo">Introduzca los datos para el perfil</h1>
+                            <form [formGroup]="profileForm" (ngSubmit)="updateUser()">
+
+                                <section class="form_name">
+                                    <mat-form-field class="fill mat_form_name">
+                                        <mat-label>Introduzca tu usuario</mat-label>
+                                        <input type="text" matInput [formControl]="usuario" required />
+                                        <mat-error
+                                            *ngIf="usuario.hasError('minlength') && !usuario.hasError('required')">
+                                            User must be at least 5 characters long.
+                                        </mat-error>
+                                        <mat-error
+                                            *ngIf="usuario.hasError('maxlength') && !usuario.hasError('required')">
+                                            User can be max 25 characters long.
+                                        </mat-error>
+                                        <mat-error *ngIf="usuario.hasError('required')">
+                                            User is <strong>required</strong>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </section>
+
+                                <section class="form_name">
+                                    <mat-form-field class="fill mat_form_name">
+                                        <mat-label>Introduzca tu correo</mat-label>
+                                        <input type="text" matInput [formControl]="correo" />
+                                        <mat-error *ngIf="correo.hasError('pattern') && !correo.hasError('required')">
+                                            Please enter a valid email address
+                                        </mat-error>
+                                        <mat-error *ngIf="correo.hasError('required')">
+                                            Email is <strong>required</strong>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </section>
+
+                                <section class="form_name">
+                                    <mat-form-field class="fill mat_form_name">
+                                        <mat-label>Introduzca tu contraseña</mat-label>
+                                        <input type="password" matInput [formControl]="password" />
+                                        <mat-error
+                                            *ngIf="password.hasError('minlength') && !password.hasError('required')">
+                                            Password must be at least 8 characters long.
+                                        </mat-error>
+                                        <mat-error *ngIf="password.hasError('required')">
+                                            Password is <strong>required</strong>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </section>
+
+                                <section class="form_name">
+                                    <mat-form-field class="fill mat_form_name">
+                                        <mat-label>Introduza tu contraseña de confirmación</mat-label>
+                                        <input type="password" matInput [formControl]="password_confirmation" />
+                                        <mat-error
+                                            *ngIf="password_confirmation.hasError('minlength') && !password_confirmation.hasError('required')">
+                                            Password confirmation must be at least 8 characters long.
+                                        </mat-error>
+                                        <mat-error *ngIf="password_confirmation.hasError('required')">
+                                            Password confirmation is <strong>required</strong>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </section>
+
+                                <section>
+                                    <button mat-raised-button color="primary" type="submit"
+                                        [disabled]="!profileForm.valid">Update User</button>
+                                </section>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </mat-sidenav-container>
+    </div>
+</div>

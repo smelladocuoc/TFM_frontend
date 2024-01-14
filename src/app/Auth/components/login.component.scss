@@ -1,0 +1,121 @@
+.error {
+    color: red;
+}
+
+#loginFeedback {
+    visibility: hidden;
+    min-width: 250px;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 16px;
+    z-index: 1;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loginFeedback.requestOk {
+    background-color: green;
+}
+
+#loginFeedback.requestKo {
+    background-color: red;
+}
+
+#loginFeedback.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+#login {
+    text-align: center;
+    background-color: rgb(255, 255, 255, 1);
+    border-radius: 26px;
+    padding-bottom: 80px;
+}
+
+img {
+    width: 160px;
+    height: 160px;
+    border-radius: 150px;
+    margin-bottom: 80px;
+}
+
+#form {
+    margin: auto;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255, 0);
+}
+
+#form_background {
+    background-image: url("../../../assets/imagen_fondo.jpg");
+    padding: 40px;
+    background-size: contain;
+}
+
+#registro {
+    margin: 40px;
+}
+
+.form_name {
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.mat_form_name {
+    display: flex;
+}
+
+.login_espacio {
+    height: 1.7em;
+}

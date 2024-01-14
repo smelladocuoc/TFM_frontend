@@ -1,0 +1,49 @@
+.imagen_principal {
+    background-image: url("../../../../assets/imagen_fondo.jpg");
+    padding: 40px;
+    width: 100%;
+    font-weight: bold;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 3%;
+}
+
+.nombre_principal {
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.imagen_inicial {
+    width: 200px;
+    height: auto;
+    margin-top: 16%;
+    margin-bottom: 12%;
+}
+
+.nombre_principal div {
+    margin: 6%;
+    width: 50%;
+}
+
+.elementos_principal {
+    margin: 2%;
+    text-align: center;
+}
+
+.pagina_principal {
+    font-size: 3.7em;
+    font-style: italic;
+}
+
+@media(max-width:830px) {
+
+    .nombre_principal {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 17em;
+    }
+}

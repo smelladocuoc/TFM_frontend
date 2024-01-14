@@ -1,0 +1,58 @@
+<div id="form_background">
+    <div class="login_espacio"></div>
+    <div class="login_texto" style="margin-left: auto; margin-right: auto">
+        <p id="loginFeedback"></p>
+    </div>
+    <mat-sidenav-container id="form">
+        <mat-sidenav-content>
+
+            <div class="col-md-6 offset-md-3">
+                <div id="login" class="content mat-elevation-z8 justify-content-center">
+                    <div class="login-form">
+                        <img class="avatar mat-elevation-z8 mt-5" src="./assets/logo_inicial.png" alt="logo inicial">
+                        <div class="mt-2">
+
+                            <h1>Inicio de sesión</h1>
+
+                            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                                <section class="form_name">
+                                    <mat-form-field class="fill mat_form_name">
+                                        <mat-label>Introduce tu correo</mat-label>
+                                        <input type="email" matInput [formControl]="correo" required
+                                            placeholder="Ex. correo@example.com" />
+                                        <mat-error *ngIf="correo.hasError('pattern') && !correo.hasError('required')">
+                                            Please enter a valid email address
+                                        </mat-error>
+                                        <mat-error *ngIf="correo.hasError('required')">
+                                            Email is <strong>required</strong>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </section>
+
+                                <section class="form_name">
+                                    <mat-form-field class="fill mat_form_name">
+                                        <mat-label>Introduce tu contraseña</mat-label>
+                                        <input type="password" matInput [formControl]="password" required />
+                                        <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+                                    </mat-form-field>
+                                </section>
+
+                                <section>
+                                    <button mat-raised-button color="primary" type="submit"
+                                        [disabled]="!loginForm.valid">Login</button>
+                                </section>
+
+                                <section>
+                                    <div id="registro">
+                                        <p>Si no estás registrado, <a href="/register">regístrate</a></p>
+                                    </div>
+                                </section>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

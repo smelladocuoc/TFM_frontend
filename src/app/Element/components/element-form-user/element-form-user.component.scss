@@ -1,0 +1,22 @@
+.content_card {
+    text-align: center;
+    border: 8px double gray;
+    border-radius: 16px;
+    background-color: #d9ecf2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.title_card {
+    padding-bottom: 2%;
+}
+
+.form_name {
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.mat_form_name {
+    display: flex;
+}

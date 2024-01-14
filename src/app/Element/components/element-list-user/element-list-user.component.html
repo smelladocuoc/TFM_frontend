@@ -1,0 +1,48 @@
+<div class="container rounded mt-5 bg-white p-md-5">
+    <div class="h2 font-weight-bold">Lista de elementos añadidos a tu colección</div>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <div class="table-responsive">
+        <table mat-table [dataSource]="elements" class="table table-hover table-striped">
+
+            <ng-container matColumnDef="nombre">
+                <th class="table_header" mat-header-cell *matHeaderCellDef> NOMBRE </th>
+                <td class="pt-3 border_table_left table_name" mat-cell *matCellDef="let element"> {{element.nombre}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="imagen">
+                <th class="table_header" mat-header-cell *matHeaderCellDef> IMAGEN </th>
+                <td class="pt-3 table_name" mat-cell *matCellDef="let element"> <img src="{{element.imagen}}"
+                        alt="imagen elemento usuario">
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="fecha_publicacion">
+                <th class="table_header" mat-header-cell *matHeaderCellDef> FECHA DE PUBLICACIÓN </th>
+                <td class="pt-3 table_name" mat-cell *matCellDef="let element"> {{element.fecha_publicacion}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th class="table_header tabla_header_espacio" mat-header-cell *matHeaderCellDef> ACCIONES </th>
+                <td class="pt-2 border_table_right tabla_espacio table_name" mat-cell *matCellDef="let element">
+                    <div id="button_action">
+                        <button (click)="loadUserElements(element.id)" mat-mini-fab color="primary">
+                            <mat-icon>search</mat-icon>
+                        </button>
+                        <button (click)="deleteElementUser(element.id)" mat-mini-fab color="primary">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+
+    <button class="back_elements" (click)="backUserElements()" mat-raised-button color="primary">Volver</button>
+    <button (click)="loadNouserElements()" mat-raised-button color="primary">Añadir elementos a la colección</button>
+
+</div>

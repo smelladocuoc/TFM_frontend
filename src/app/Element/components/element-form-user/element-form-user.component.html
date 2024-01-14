@@ -1,0 +1,30 @@
+<div class="card_list container rounded mt-5 bg-white p-md-5">
+    <mat-card *ngFor="let element of elements" class="home_card">
+        <mat-card-content class="content_card">
+            <p><img class="img-fluid border-0 mb-3" src="{{element.imagen}}" alt="imagen elemento"></p>
+            <mat-card-title class="title_card">
+                <h1>{{element.nombre}}</h1>
+            </mat-card-title>
+            <p>Fecha de publicación: {{ element.fecha_publicacion | formatDate: 3 }}</p>
+            <p>Colección: {{ collections[0].nombre_coleccion }}</p>
+            <p>Comentarios: {{ element.comentario }}</p>
+            <section class="form_name">
+                <mat-form-field class="fill mat_form_name">
+                    <mat-label>Introduzca tu comentario (Indique nombre de usuario en el comentario)</mat-label>
+                    <input type="text" matInput [formControl]="comentario" required />
+                    <mat-error *ngIf="comentario.hasError('maxlength') && !comentario.hasError('required')">
+                        Comment can be max 255 characters long.
+                    </mat-error>
+                    <mat-error *ngIf="comentario.hasError('required')">
+                        Comment is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </section>
+
+            <section>
+                <button (click)="editCommentElement()" mat-raised-button color="primary" type="submit"
+                    [disabled]="!comentario.valid">GUARDAR</button>
+            </section>
+        </mat-card-content>
+    </mat-card>
+</div>

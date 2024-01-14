@@ -1,0 +1,75 @@
+<div style="margin-left: auto; margin-right: auto">
+    <p id="postFeedback"></p>
+</div>
+<div>
+    <div id="form_background">
+        <mat-sidenav-container id="form">
+            <mat-sidenav-content>
+
+                <div class="col-md-6 offset-md-3">
+                    <div id="login" class="content mat-elevation-z8 justify-content-center">
+                        <div class="login-form">
+                            <img class="avatar mat-elevation-z8 mt-5" src="./assets/logo_inicial.png"
+                                alt="logo inicial">
+                            <div class="mt-2">
+                                <h1 class="titulo">Introduzca los datos para la colección
+
+                                </h1>
+                                <form *ngIf="collectionForm" [formGroup]="collectionForm" (ngSubmit)="saveCollection()">
+
+                                    <section class="form_name">
+                                        <mat-form-field class="fill mat_form_name">
+                                            <mat-label>introduzca el nombre de tu colección</mat-label>
+                                            <input type="text" matInput [formControl]="nombre_coleccion" required />
+                                            <mat-error
+                                                *ngIf="nombre_coleccion.hasError('maxlength') && !nombre_coleccion.hasError('required')">
+                                                Collection name can be max 55 characters long.
+                                            </mat-error>
+                                            <mat-error *ngIf="nombre_coleccion.hasError('required')">
+                                                Collection name is <strong>required</strong>
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </section>
+
+                                    <section class="form_name">
+                                        <mat-form-field class="fill mat_form_name">
+                                            <mat-label>Introduzca el tipo de tu colección</mat-label>
+                                            <input type="text" matInput [formControl]="tipo_coleccion" required />
+                                            <mat-error
+                                                *ngIf="tipo_coleccion.hasError('maxlength') && !tipo_coleccion.hasError('required')">
+                                                Collection type can be max 255 characters long.
+                                            </mat-error>
+                                            <mat-error *ngIf="tipo_coleccion.hasError('required')">
+                                                Collection type is <strong>required</strong>
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </section>
+
+                                    <section class="form_name">
+                                        <mat-form-field class="fill mat_form_name">
+                                            <mat-label>Introduzca la imagen de tu colección</mat-label>
+                                            <input type="text" matInput [formControl]="imagen_coleccion" required />
+                                            <mat-error
+                                                *ngIf="imagen_coleccion.hasError('maxlength') && !imagen_coleccion.hasError('required')">
+                                                Collection image can be max 255 characters long.
+                                            </mat-error>
+                                            <mat-error *ngIf="imagen_coleccion.hasError('required')">
+                                                Collection image is <strong>required</strong>
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </section>
+
+                                    <section>
+                                        <button mat-raised-button color="primary" type="submit"
+                                            [disabled]="!collectionForm.valid">SAVE</button>
+                                    </section>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>

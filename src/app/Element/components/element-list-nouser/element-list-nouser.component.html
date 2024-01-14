@@ -1,0 +1,41 @@
+<div class="container rounded mt-5 bg-white p-md-5">
+    <div class="h2 font-weight-bold">Lista de elementos para añadir a tu colección</div>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <div class="table-responsive">
+        <table mat-table [dataSource]="elements" class="table table-hover table-striped">
+
+            <ng-container matColumnDef="nombre">
+                <th class="table_header" mat-header-cell *matHeaderCellDef> NOMBRE </th>
+                <td class="pt-3 border_table_left table_name" mat-cell *matCellDef="let element"> {{element.nombre}}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="imagen">
+                <th class="table_header" mat-header-cell *matHeaderCellDef> IMAGEN </th>
+                <td class="pt-3 table_name" mat-cell *matCellDef="let element"> <img src="{{element.imagen}}"
+                        alt="imagen elemento no usuario"> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="fecha_publicacion">
+                <th class="table_header" mat-header-cell *matHeaderCellDef> FECHA DE PUBLICACIÓN </th>
+                <td class="pt-3 table_name" mat-cell *matCellDef="let element"> {{element.fecha_publicacion}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="adquirido">
+                <th class="table_header tabla_header_espacio" mat-header-cell *matHeaderCellDef> ADQUIRIDO </th>
+                <td class="pt-2 border_table_right tabla_espacio table_name" mat-cell *matCellDef="let element">
+                    <mat-checkbox (change)="onCategoriaPressed(element.id,$event.checked)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+
+    <button class="back_elements" (click)="backUserElements()" mat-raised-button color="primary">Volver</button>
+    <button (click)="editElementUser()" mat-raised-button color="primary">Añadir</button>
+
+</div>

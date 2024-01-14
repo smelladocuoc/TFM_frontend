@@ -1,0 +1,57 @@
+<!-- NO AUTH REQUIRED -->
+<div class="enlaces fixed-top" *ngIf="showNoAuthSection">
+
+</div>
+
+<!-- AUTH REQUIRED -->
+<div class="enlaces fixed-top" *ngIf="showAuthSection">
+    <mat-toolbar color="primary" class="enlaces_nombre">
+        <div class="enlaces_espacio">
+            <div>
+                <img class="rounded-circle shadow-4-strong" src="../../../../assets/logo_inicial.png" alt="logo inicial"
+                    width="45" height="45">
+                <span class="nombre_app">Lugar de colecciones</span>
+            </div>
+            <div class="paginas_espacio">
+                <ul>
+                    <li class="lista"><span (click)="home()">Inicio</span></li>
+                    <li class="lista"><span (click)="collections()">Mis colecciones</span></li>
+                    <li class="lista"><span (click)="elementscharts()">Gráficos</span></li>
+                    <li class="lista"><span (click)="profile()">Perfil</span></li>
+                    <li class="lista"><span (click)="logout()">Logout</span></li>
+                </ul>
+            </div>
+        </div>
+    </mat-toolbar>
+</div>
+
+<!-- ADMIN REQUIRED -->
+<div class="enlaces fixed-top" *ngIf="showAdminSection">
+    <mat-toolbar color="primary" class="enlaces_nombre">
+        <div class="enlaces_espacio">
+            <div>
+                <img class="rounded-circle shadow-4-strong" src="../../../../assets/logo_inicial.png" alt="logo inicial"
+                    width="45" height="45">
+                <span>Lugar de colecciones</span>
+            </div>
+            <div class="paginas_espacio">
+                <ul>
+                    <li class="lista"><span (click)="home()">Inicio</span></li>
+                    <li class="lista"><span (click)="adminElements()">Admin elementos</span></li>
+                    <li class="lista"><span (click)="adminCollections()">Admin colecciones</span></li>
+                    <li class="lista"><span (click)="profile()">Perfil</span></li>
+                    <li class="lista"><span (click)="logout()">Logout</span></li>
+                </ul>
+            </div>
+        </div>
+    </mat-toolbar>
+</div>
+
+<!-- APP IMAGE -->
+<div class="enlaces fixed-top imagen_app" *ngIf="!showAppImage">
+    <mat-toolbar color="primary" class="enlaces_nombre">
+        <img class="rounded-circle shadow-4-strong" src="../../../../assets/logo_inicial.png" alt="logo inicial"
+            width="45" height="45">
+        <span>Lugar de colecciones</span>
+    </mat-toolbar>
+</div>
