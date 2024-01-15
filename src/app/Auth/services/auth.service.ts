@@ -18,7 +18,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private sharedService: SharedService) {
     this.controller = 'api/login';
-    this.urlBlogUocApi = 'https://lugardecoleccionestfm.000webhostapp.com/' + this.controller;
+    this.urlBlogUocApi = 'http://localhost:8000/' + this.controller;
   }
 
   login(auth: AuthDTO): Observable<AuthToken> {
