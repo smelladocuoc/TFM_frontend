@@ -80,6 +80,7 @@ export class ElementFormUserComponent {
   editCommentElement(): void {
     if (this.elementId) {
       let comentario_format = "{\"comentario\":\"" + this.comentario.value + " / " + this.elements[0].comentario + "\"}";
+      console.log(comentario_format);
       this.store.dispatch(ElementsAction.updateCommentElement({ elementId: this.elementId, comment: comentario_format }));
     }
   }

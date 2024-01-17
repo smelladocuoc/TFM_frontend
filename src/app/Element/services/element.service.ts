@@ -75,7 +75,7 @@ export class ElementService {
 
   updateCommentElement(elementId: string, comentario: String): Observable<ElementDTO> {
     return this.http
-      .post<ElementDTO>(this.urlBlogUocApi + '/actualizacion/comentario/' + elementId, comentario)
+      .post<ElementDTO>(this.urlBlogUocApi + '/actualizacion/comentario/' + elementId + '/1', comentario)
       .pipe(catchError(this.sharedService.handleError));
   }
 

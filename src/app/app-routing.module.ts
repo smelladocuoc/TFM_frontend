@@ -18,7 +18,7 @@ import { ElementChartsComponent } from './Element/components/element-charts/elem
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: LoginComponent,
   },
   {
     path: 'login',
