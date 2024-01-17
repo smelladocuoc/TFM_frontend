@@ -22,7 +22,7 @@ export class ElementService {
 
   constructor(private http: HttpClient, private sharedService: SharedService) {
     this.controller = 'elemento';
-    this.urlBlogUocApi = 'http://localhost:8000/api/' + this.controller;
+    this.urlBlogUocApi = 'https://tfmbackend-production.up.railway.app/api/' + this.controller;
   }
 
   getElements(): Observable<ElementDTO[]> {
@@ -33,25 +33,25 @@ export class ElementService {
 
   getElementsByUserId(userId: string): Observable<ElementDTO[]> {
     return this.http
-      .get<ElementDTO[]>('http://localhost:8000/api/elemento/user/' + userId + '/1')
+      .get<ElementDTO[]>('https://tfmbackend-production.up.railway.app/api/elemento/user/' + userId + '/1')
       .pipe(catchError(this.sharedService.handleError));
   }
 
   getElementsCollection(collectionId: string, userId: string): Observable<ElementDTO[]> {
     return this.http
-      .get<ElementDTO[]>('http://localhost:8000/api/elemento/coleccion/' + collectionId + '/' + userId)
+      .get<ElementDTO[]>('https://tfmbackend-production.up.railway.app/api/elemento/coleccion/' + collectionId + '/' + userId)
       .pipe(catchError(this.sharedService.handleError));
   }
 
   getElementsCharts(): Observable<String[]> {
     return this.http
-      .get<String[]>('http://localhost:8000/api/elemento/grafico/numero')
+      .get<String[]>('https://tfmbackend-production.up.railway.app/api/elemento/grafico/numero')
       .pipe(catchError(this.sharedService.handleError));
   }
 
   getElementsNouserCollection(collectionId: string, userId: string): Observable<ElementDTO[]> {
     return this.http
-      .get<ElementDTO[]>('http://localhost:8000/api/elemento/nouser/coleccion/' + collectionId + '/' + userId)
+      .get<ElementDTO[]>('https://tfmbackend-production.up.railway.app/api/elemento/nouser/coleccion/' + collectionId + '/' + userId)
       .pipe(catchError(this.sharedService.handleError));
   }
 

@@ -13,7 +13,7 @@ export class UserService {
 
   constructor(private http: HttpClient, private sharedService: SharedService) {
     this.controller = 'api';
-    this.urlBlogUocApi = 'http://localhost:8000/' + this.controller;
+    this.urlBlogUocApi = 'https://tfmbackend-production.up.railway.app/' + this.controller;
   }
 
   register(user: UserDTO): Observable<UserDTO> {

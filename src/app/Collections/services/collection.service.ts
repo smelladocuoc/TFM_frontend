@@ -17,18 +17,18 @@ export class CollectionService {
 
   constructor(private http: HttpClient, private sharedService: SharedService) {
     this.controller = 'coleccion';
-    this.urlBlogUocApi = 'http://localhost:8000/api/' + this.controller;
+    this.urlBlogUocApi = 'https://tfmbackend-production.up.railway.app/api/' + this.controller;
   }
 
   getCollectionsByUserId(userId: string): Observable<CollectionDTO[]> {
     return this.http
-      .get<CollectionDTO[]>('http://localhost:8000/api/coleccion')
+      .get<CollectionDTO[]>('https://tfmbackend-production.up.railway.app/api/coleccion')
       .pipe(catchError(this.sharedService.handleError));
   }
 
   getCollectionElement(elementId: string): Observable<CollectionDTO[]> {
     return this.http
-      .get<CollectionDTO[]>('http://localhost:8000/api/elemento/coleccion/' + elementId)
+      .get<CollectionDTO[]>('https://tfmbackend-production.up.railway.app/api/elemento/coleccion/' + elementId)
       .pipe(catchError(this.sharedService.handleError));
   }
 
