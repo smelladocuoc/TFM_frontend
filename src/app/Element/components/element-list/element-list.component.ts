@@ -55,6 +55,9 @@ export class ElementListComponent {
     if (result) {
       this.store.dispatch(ElementsAction.deleteElement({ elementId: elementId }));
     }
-    this.loadElements();
+
+    setTimeout(() => {
+      this.loadElements();
+    }, 1500);
   }
 }
